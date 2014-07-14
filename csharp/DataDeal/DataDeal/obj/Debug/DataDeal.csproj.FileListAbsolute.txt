@@ -1,0 +1,9 @@
+D:\project\vs2012\DataDeal\DataDeal\bin\Debug\DataDeal.exe.config
+D:\project\vs2012\DataDeal\DataDeal\bin\Debug\DataDeal.exe
+D:\project\vs2012\DataDeal\DataDeal\bin\Debug\DataDeal.pdb
+D:\project\vs2012\DataDeal\DataDeal\obj\Debug\DataDeal.csprojResolveAssemblyReference.cache
+D:\project\vs2012\DataDeal\DataDeal\obj\Debug\DataDeal.Form1.resources
+D:\project\vs2012\DataDeal\DataDeal\obj\Debug\DataDeal.Properties.Resources.resources
+D:\project\vs2012\DataDeal\DataDeal\obj\Debug\DataDeal.csproj.GenerateResource.Cache
+D:\project\vs2012\DataDeal\DataDeal\obj\Debug\DataDeal.exe
+D:\project\vs2012\DataDeal\DataDeal\obj\Debug\DataDeal.pdb
