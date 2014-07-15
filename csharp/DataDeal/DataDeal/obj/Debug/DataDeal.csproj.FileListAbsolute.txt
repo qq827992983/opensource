@@ -7,3 +7,12 @@ D:\project\vs2012\DataDeal\DataDeal\obj\Debug\DataDeal.Properties.Resources.reso
 D:\project\vs2012\DataDeal\DataDeal\obj\Debug\DataDeal.csproj.GenerateResource.Cache
 D:\project\vs2012\DataDeal\DataDeal\obj\Debug\DataDeal.exe
 D:\project\vs2012\DataDeal\DataDeal\obj\Debug\DataDeal.pdb
+D:\project\svn\opensource\trunk\csharp\DataDeal\DataDeal\bin\Debug\DataDeal.exe.config
+D:\project\svn\opensource\trunk\csharp\DataDeal\DataDeal\obj\Debug\DataDeal.exe
+D:\project\svn\opensource\trunk\csharp\DataDeal\DataDeal\obj\Debug\DataDeal.pdb
+D:\project\svn\opensource\trunk\csharp\DataDeal\DataDeal\obj\Debug\DataDeal.csprojResolveAssemblyReference.cache
+D:\project\svn\opensource\trunk\csharp\DataDeal\DataDeal\obj\Debug\DataDeal.Form1.resources
+D:\project\svn\opensource\trunk\csharp\DataDeal\DataDeal\obj\Debug\DataDeal.Properties.Resources.resources
+D:\project\svn\opensource\trunk\csharp\DataDeal\DataDeal\obj\Debug\DataDeal.csproj.GenerateResource.Cache
+D:\project\svn\opensource\trunk\csharp\DataDeal\DataDeal\bin\Debug\DataDeal.exe
+D:\project\svn\opensource\trunk\csharp\DataDeal\DataDeal\bin\Debug\DataDeal.pdb
