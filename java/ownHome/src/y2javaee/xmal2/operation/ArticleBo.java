@@ -32,7 +32,7 @@ public class ArticleBo {
 		String sql = "select top " + TOP
 				+ " *  from article where type=? order by writeDate";
 		try {
-			conn = DBConnection.getConnectionForJndi();//使用JNDI方法获取数据库连接对象
+			conn = DBConnection.getConnectionForProperty();//使用JNDI方法获取数据库连接对象
 			ps = conn.prepareStatement(sql);
 			
 			ps.setInt(1, type);
@@ -71,7 +71,7 @@ public class ArticleBo {
 				+ TOP
 				+ " *  from article where type=? and writer = ? order by writeDate";
 		try {
-			conn = DBConnection.getConnectionForJndi();
+			conn = DBConnection.getConnectionForProperty();
 			ps = conn.prepareStatement(sql);
 			
 			ps.setInt(1, type);
@@ -119,7 +119,7 @@ public class ArticleBo {
 			sql.append(" and writer like '%" + writer + "%'");
 		sql.append(" order by writeDate desc");
 		try {
-			conn = DBConnection.getConnectionForJndi();
+			conn = DBConnection.getConnectionForProperty();
 			ps = conn.prepareStatement(sql.toString());
 
 			rs = ps.executeQuery();
@@ -149,7 +149,7 @@ public class ArticleBo {
 //		Article article = null;
 //		String sql = "select * from article where articleId = ? ";
 //		try {
-//			conn = DBConnection.getConnectionForJndi();
+//			conn = DBConnection.getConnectionForProperty();
 //			ps = conn.prepareStatement(sql);
 //
 //			ps.setString(1, articleId);
@@ -186,7 +186,7 @@ public class ArticleBo {
 		try {
 			SQLCommandBean bean = new SQLCommandBean();
 
-			conn = DBConnection.getConnectionForJndi();
+			conn = DBConnection.getConnectionForProperty();
 			bean.setConnection(conn);
 			bean.setSql(sql);
 			List param = new ArrayList();

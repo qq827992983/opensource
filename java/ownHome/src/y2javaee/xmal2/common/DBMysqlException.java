@@ -1,6 +1,6 @@
 package y2javaee.xmal2.common;
 
-public class DBAccessException extends Exception {
+public class DBMysqlException extends Exception {
 	
 	private static final long serialVersionUID = 8592427083086675651L;
 	protected Throwable throwable;
@@ -10,7 +10,7 @@ public class DBAccessException extends Exception {
 	 * 
 	 * @param message
 	 */
-	public DBAccessException(String message) {
+	public DBMysqlException(String message) {
 		super(message);
 		
 	}
@@ -21,7 +21,7 @@ public class DBAccessException extends Exception {
 	 * @param message
 	 * @param throwable
 	 */
-	public DBAccessException(String message, Throwable throwable) {
+	public DBMysqlException(String message, Throwable throwable) {
 		super(message);
 		this.throwable = throwable;
 	}

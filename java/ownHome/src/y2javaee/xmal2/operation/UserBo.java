@@ -23,7 +23,7 @@ public class UserBo {
 		Users user=null;
 		String sql="select * from users where userName=? and password=? ";
 		try{
-			conn=DBConnection.getConnectionForJndi();
+			conn=DBConnection.getConnectionForProperty();
 			ps=conn.prepareStatement(sql);
 			ps.setString(1, userName);
 			ps.setString(2, password);
@@ -55,7 +55,7 @@ public class UserBo {
 		int count=0;
 		String sql="insert into users values(?,?,?,?) ";
 		try{
-			conn=DBConnection.getConnectionForJndi();
+			conn=DBConnection.getConnectionForProperty();
 			ps=conn.prepareStatement(sql);
 			ps.setString(1, user.getUserName());
 			ps.setString(2, user.getPassword());

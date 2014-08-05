@@ -16,7 +16,7 @@ public class DBConnection {
 	 * @return Connection
 	 */
 	public static synchronized Connection getConnectionForJndi()
-			throws DBAccessException {
+			throws DBMysqlException {
 
 		try {
 			Context ic = new InitialContext();
@@ -25,7 +25,7 @@ public class DBConnection {
 					.lookup("java:comp/env/jdbc/ownHome");
 			conn = source.getConnection();
 		} catch (Exception e) {
-			throw new DBAccessException("不能取得数据库连接!");
+			throw new DBMysqlException("不能取得数据库连接!");
 		}
 		return conn;
 	}
@@ -35,8 +35,8 @@ public class DBConnection {
 	 * 
 	 * @return Connection
 	 */
-	public static Connection getConnectionForProperty()
-			throws DBAccessException {
+	public static synchronized Connection getConnectionForProperty()
+			throws DBMysqlException {
 
 		// 读出配置信息
 		String driverClassName = Env.getInstance().getProperty("driver");
@@ -44,12 +44,15 @@ public class DBConnection {
 		String password = Env.getInstance().getProperty("password");
 		String user = Env.getInstance().getProperty("user");
 		Connection con = null;
+		System.out.println("driverClassName:"+driverClassName+",url:"+url+",user:"+user+",password:"+password);
 		try {
 			// 加载数据库驱动程序
 			Class.forName(driverClassName);
 			con = DriverManager.getConnection(url, user, password);
+			if(con != null)
+				System.out.println("链接数据库成功！");
 		} catch (Exception ex) {
-			throw new DBAccessException("不能取得数据库连接!");
+			throw new DBMysqlException("不能取得数据库连接!");
 		}
 		return con;
 	}
