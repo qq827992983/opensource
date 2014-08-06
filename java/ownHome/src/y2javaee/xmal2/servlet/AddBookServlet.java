@@ -17,7 +17,9 @@ import org.codehaus.xfire.service.binding.ObjectServiceFactory;
 
 
 import y2javaee.xmal2.common.Validate;
-import y2javaee.xmal2.operation.IBookService;
+import y2javaee.xmal2.entity.Book;
+import y2javaee.xmal2.operation.BookBo;
+import y2javaee.xmal2.operation.UserBo;
 /**
  * 处理添加通讯录信息的Servlet
  */
@@ -38,49 +40,35 @@ public class AddBookServlet extends HttpServlet {
 			throws ServletException, IOException {
 
 		//处理中文的设置
+		System.out.println("处理添加书籍，Post方法！");
 		request.setCharacterEncoding("gb2312");
 		response.setContentType("text/html;charset=gb2312");
 		//获取用户输入的数据
+		Book book = new Book();
 		String name=Validate.validStringNull(request.getParameter("name"));
+		book.setName(name);
 		String sex=Validate.validStringNull(request.getParameter("sex"));
+		book.setSex(sex);
 		String phone=Validate.validStringNull(request.getParameter("phone"));
+		book.setPhone(phone);
 		String address=Validate.validStringNull(request.getParameter("address"));
+		book.setAddress(address);
 		String mobilePhone=Validate.validStringNull(request.getParameter("mobilePhone"));
+		book.setMobilePhone(mobilePhone);
 		String company=Validate.validStringNull(request.getParameter("company"));
+		book.setCompany(company);
 		String comPhone=Validate.validStringNull(request.getParameter("comPhone"));
+		book.setComPhone(comPhone);
 		String comAddress=Validate.validStringNull(request.getParameter("comAddress"));
+		book.setComAddress(comAddress);
 		String relation=Validate.validStringNull(request.getParameter("relation"));
+		book.setRelation(relation);
+		int ret = 0;
 		
-		
-		//创建服务的元数据
-		Service serviceModel = new ObjectServiceFactory().create(IBookService.class);
-		System.out.println("返回了服务的模型.");
-
-		// 创建服务的代理
-		XFire xfire = XFireFactory.newInstance().getXFire();
-		XFireProxyFactory factory = new XFireProxyFactory(xfire);
-
-		String serviceUrl = "http://localhost:8080/addressBook/services/AddBookService";// 服务的地址
-
-		IBookService client = null;
-		try {
-			client = (IBookService) factory.create(serviceModel, serviceUrl);
-		} catch (MalformedURLException e) {
-			System.out.println("客户端调用异常: " + e.toString());
-		}
-
-		// 调用服务
-		int serviceResponse = 0;
-		try {
-			serviceResponse = client.addBookService(name,sex,phone,address,mobilePhone,company,comPhone,comAddress,relation, 1);
-			System.out.println("WsClient.callWebService(): status="
-					+ serviceResponse);
-		} catch (Exception e) {
-			System.out.println("WsClient.callWebService(): EXCEPTION: "
-					+ e.toString());
-		}
+		BookBo bo = new BookBo();
+		ret = bo.insertBook(book);
 		PrintWriter out=response.getWriter();
-		if (serviceResponse == 1) {
+		if (ret == 1) {
 			//添加成功
 			out.print("<script type='' language='javascript'>alert('添加成功。');location.href='addBook.jsp';</script>");
 			

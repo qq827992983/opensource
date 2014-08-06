@@ -8,7 +8,4 @@ create table if not exists type(typeId int primary key auto_increment, type varc
 
 create table if not exists article(articleId int primary key,title varchar(100), content varchar(4096), writer varchar(100), writeDate DateTime, typeId int, foreign key(typeId) references type(typeId));
 
-create table if not exists book(int id primary key auto_increment,
-
-
-name,sex,id,phone,address,mobilePhone,company,comPhone,comAddress,relation,userId(foreign key)
+create table if not exists book(id int primary key auto_increment,name varchar(100),sex varchar(20),phone varchar(20), address varchar(100), mobilePhone varchar(100), company varchar(100), comPhone varchar(100), comAddress varchar(100), relation varchar(100), userId int, foreign key(userId) references users(userId));

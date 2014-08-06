@@ -29,8 +29,7 @@ public class ArticleBo {
  */
 	public List selectArticleByType(int type) {
 		List list = new ArrayList();
-		String sql = "select top " + TOP
-				+ " *  from article where type=? order by writeDate";
+		String sql = "select * from article where typeId=? order by writeDate limit " + TOP;
 		try {
 			conn = DBConnection.getConnectionForProperty();//使用JNDI方法获取数据库连接对象
 			ps = conn.prepareStatement(sql);
@@ -67,9 +66,8 @@ public class ArticleBo {
  */
 	public List selectArticleByType(int type, String userName) {
 		List list = new ArrayList();
-		String sql = "select top "
-				+ TOP
-				+ " *  from article where type=? and writer = ? order by writeDate";
+		System.out.println("type:"+type + ",userName:"+userName);
+		String sql = "select * from article where typeId=? and writer = ? order by writeDate limit "+ TOP;
 		try {
 			conn = DBConnection.getConnectionForProperty();
 			ps = conn.prepareStatement(sql);
@@ -109,15 +107,18 @@ public class ArticleBo {
 	public List searchArtcle(String type, String title, String writer) {
 		List list = new ArrayList(); 
 		//根据传入的参数的不同，进行拼写SQL语句
+		System.out.println("type:"+type+",title:"+title+",writer:"+writer);
 		StringBuffer sql = new StringBuffer(
-				"select top 10 *  from article where 1=1 ");
+				"select * from article where 1=1 ");
 		if (type != null && !"".equals(type) && type != "0")
-			sql.append(" and type=" + type);
+			sql.append(" and typeId=" + type);
 		if (title != null && !"".equals(title))
 			sql.append(" and title like '%" + title + "%'");
 		if (writer != null && !"".equals(writer))
 			sql.append(" and writer like '%" + writer + "%'");
 		sql.append(" order by writeDate desc");
+		
+		System.out.println("sql:"+sql);
 		try {
 			conn = DBConnection.getConnectionForProperty();
 			ps = conn.prepareStatement(sql.toString());
@@ -182,7 +183,7 @@ public class ArticleBo {
 	public Article getArticleById(String articleId) {
 
 		Article article = null;
-		String sql = "select  *  from article where articleId = ? ";
+		String sql = "select * from article where articleId = ? ";
 		try {
 			SQLCommandBean bean = new SQLCommandBean();
 
