@@ -1,7 +1,7 @@
 <%@ page language="java" pageEncoding="gb2312"%>
 <HTML>
 <HEAD>
-<TITLE>E-家园</TITLE>
+<TITLE>E-学习</TITLE>
 <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
 <link href="css.css" rel="stylesheet" type="text/css">
 <script type="text/javascript">

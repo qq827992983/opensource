@@ -139,7 +139,7 @@ document.write('<marquee style="color:#ff0000;font-size:12px;line-height:17px;" 
 + ' onMouseOver="this.scrollDelay=5000" onMouseOut="this.scrollDelay=1"> ' 
 + ' 在天地间，<br />我们每一个人都是<br />独一无二、<br />与众不同的。<br /> '
 + ' 只要相信自己，<br />只要你努力，<br />就会做到最好。<br />  ' 
-+ ' 因为---<br />北大青鸟就在你身边 '
++ ' 坚持！ <br /> 成功属于你！ '
 + '</marquee>'); 
 </script></td>
 			</tr>
