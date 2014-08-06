@@ -53,7 +53,7 @@ public class UserBo {
 	 */
 	public int insertUser(Users user){
 		int count=0;
-		String sql="insert into users values(?,?,?,?) ";
+		String sql="insert into users(userName, password,realName,sex) values(?,?,?,?)";
 		try{
 			conn=DBConnection.getConnectionForProperty();
 			ps=conn.prepareStatement(sql);
