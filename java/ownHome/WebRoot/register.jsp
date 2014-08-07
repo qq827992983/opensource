@@ -1,7 +1,7 @@
 <%@ page language="java" pageEncoding="gb2312"%>
 <HTML>
 <HEAD>
-<TITLE>E-家园</TITLE>
+<TITLE>E-学习</TITLE>
 <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
 <link href="css.css" rel="stylesheet" type="text/css">
 </HEAD>
@@ -108,7 +108,7 @@
 </table>
 <TABLE WIDTH=778 BORDER=0 align="center" CELLPADDING=0 CELLSPACING=0>
 	<TR>
-		<TD height="73" align="center" background="images/bg13.gif">版权所有：E-家园<br>
+		<TD height="73" align="center" background="images/bg13.gif">版权所有：E-学习<br>
 		Copyright love.pesms.com All Rights Reserved.</TD>
 	</TR>
 </TABLE>

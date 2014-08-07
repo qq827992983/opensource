@@ -5,9 +5,10 @@ import java.sql.*;
 import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.sql.DataSource;
-
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 public class DBConnection {
-
+	private static final Logger Log = LoggerFactory.getLogger(DBConnection.class);
 	private static Connection conn;
 
 	/**
@@ -44,13 +45,13 @@ public class DBConnection {
 		String password = Env.getInstance().getProperty("password");
 		String user = Env.getInstance().getProperty("user");
 		Connection con = null;
-		System.out.println("driverClassName:"+driverClassName+",url:"+url+",user:"+user+",password:"+password);
+		Log.error("driverClassName:"+driverClassName+",url:"+url+",user:"+user+",password:"+password);
 		try {
 			// 加载数据库驱动程序
 			Class.forName(driverClassName);
 			con = DriverManager.getConnection(url, user, password);
 			if(con != null)
-				System.out.println("链接数据库成功！");
+				Log.error("链接数据库成功！");
 		} catch (Exception ex) {
 			throw new DBMysqlException("不能取得数据库连接!");
 		}

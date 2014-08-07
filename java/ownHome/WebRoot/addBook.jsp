@@ -167,7 +167,7 @@ function submitForm(){
 </table>
 <TABLE WIDTH=778 BORDER=0 align="center" CELLPADDING=0 CELLSPACING=0>
 	<TR>
-		<TD height="73" align="center" background="images/bg13.gif">版权所有：E-家园<br>
+		<TD height="73" align="center" background="images/bg13.gif">版权所有：E-学习<br>
 		Copyright love.pesms.com All Rights Reserved.</TD>
 	</TR>
 </TABLE>
