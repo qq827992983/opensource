@@ -16,8 +16,8 @@ public class Test {
 		// TODO Auto-generated method stub
 		Class.forName("com.mysql.jdbc.Driver");
 		Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/ownhome", "root", "talk2her");
-		Log.error("11111");
-		Log.debug("2222");
+		Log.error("err");
+		Log.debug("dbg");
 	}
 
 }

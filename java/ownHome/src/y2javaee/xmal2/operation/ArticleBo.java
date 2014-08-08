@@ -9,11 +9,17 @@ import java.util.Map;
 
 import javax.servlet.jsp.jstl.sql.Result;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import y2javaee.xmal2.common.DBConnection;
 import y2javaee.xmal2.common.SQLCommandBean;
+import y2javaee.xmal2.common.Test;
 import y2javaee.xmal2.entity.Article;
 
 public class ArticleBo {
+	private static final Logger Log = LoggerFactory.getLogger(ArticleBo.class);
+	
 	private Connection conn;//用于保存数据库连接对象
 
 	private PreparedStatement ps;//用于执行SQL语句
@@ -66,7 +72,7 @@ public class ArticleBo {
  */
 	public List selectArticleByType(int type, String userName) {
 		List list = new ArrayList();
-		System.out.println("type:"+type + ",userName:"+userName);
+		Log.debug("type:"+type + ",userName:"+userName);
 		String sql = "select * from article where typeId=? and writer = ? order by writeDate limit "+ TOP;
 		try {
 			conn = DBConnection.getConnectionForProperty();

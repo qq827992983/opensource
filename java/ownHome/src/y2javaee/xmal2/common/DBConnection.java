@@ -45,13 +45,12 @@ public class DBConnection {
 		String password = Env.getInstance().getProperty("password");
 		String user = Env.getInstance().getProperty("user");
 		Connection con = null;
-		Log.error("driverClassName:"+driverClassName+",url:"+url+",user:"+user+",password:"+password);
 		try {
 			// 加载数据库驱动程序
 			Class.forName(driverClassName);
 			con = DriverManager.getConnection(url, user, password);
 			if(con != null)
-				Log.error("链接数据库成功！");
+				Log.debug("链接数据库成功！");
 		} catch (Exception ex) {
 			throw new DBMysqlException("不能取得数据库连接!");
 		}
